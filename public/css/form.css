@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Estilo para todos los selectores*/
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+/* Estilo de la capa principal*/
+.form-box {
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    width: 350px;
+    padding: 50px 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.form-box .input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+}
+
+.form-box .input.active {
+    border-bottom: 2px solid #0065ff;
+    transition: 0.3s ease;
+}
+
+.form-box .input input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.form-box .input i{
+    color: #828da0;
+    font-size: 1.3rem;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+.form-box .input.active i {
+    color: #0065ff;
+    transition: 0.3s ease;
+}
+
+::placeholder {
+    color: #828da0;
+    font-size: 0.85em;
+}
+
+.eye-btn {
+    cursor: pointer;
+}
+
+.eye-btn i:hover {
+    color: #0065ff;
+    transition: 0.3s ease;
+}
+
+.link {
+    text-align: right;
+    transform: translateY(-10px);
+}
+
+.link a {
+    color: #0065ff;
+    font-size: 0.8em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn {
+    background: #0065ff;
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.login-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-options .text {
+    color: #828da0;
+    font-size: 0.65em;
+    margin: 25px 0;
+}
+
+.redes {
+    display: flex;
+}
+
+.redes a {
+    border: 1px solid #ccc;
+    padding: 11px 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    transition: border 0.3s ease;
+}
+
+.redes a:hover {
+    border: 1px solid #0065ff;
+}   
+
+.redes a img{
+    width: 20px;
+}
+
+.imgBox img{
+    max-width: 300px;
+}
+
+.link-form {
+    display: flex;
+    font-size: 0.8em;
+    margin-bottom: 25px;
+    column-gap: 5px;
+}
+
+.link-form span{
+    color: #0065ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.imgBox {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    height: 400px;
+    padding: 15px 35px;
+}
+
+.sign-in-imgBox {
+    border-radius: 0 5px 5px 0;
+}
+
+.sign-up-imgBox {
+    border-radius: 5px 0 0 5px;
+}
+
+.sign-in-form.hide .sign-in-box {
+    transform: translateX(100%);
+    visibility: hidden;
+}
+
+.sign-in-form.hide .sign-in-imgBox {
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+
+.sign-in-form.show .sign-in-box,
+.sign-in-form.show .sign-in-imgBox {
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.5s ease;
+}
+
+ 
+.sign-up-form.show .sign-up-imgBox,
+.sign-up-form.show .sign-up-box {
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.5s ease;
+}
+
+/* Adaptacion a pantalla movil */
+@media only screen and (max-width: 735px) {
+    .form-container {
+        flex-direction: column;
+        overflow: hidden;
+        padding: 30px;
+    }
+
+    .form-box {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .imgBox img {
+        max-width: 45%;
+        min-width: 180px;
+    }
+
+    .imgBox {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+        padding: 35px 35px 15px;
+    }
+
+    .sig-up-form {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .form-container {
+        font-size: 0.9rem;
+    }
+
+    .form-box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .redes a {
+        padding: 9px 25px;
+        margin: 0 3px;
+    }
+}
