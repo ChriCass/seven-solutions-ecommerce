@@ -13,15 +13,20 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
 
-     <!--=============== REMIXICONS ===============-->
-     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
     <!-- Scripts -->
-   
 
+    @isset($useViteAssets)
+        <x-vite-assets />
+    @endisset
+    <style>
+ 
+    </style>
 </head>
 
 <body>
@@ -29,7 +34,7 @@
         <header class="header" id="header">
             <nav class="nav pading">
                 <div class="nav__data">
-                    <a href="{{ url('/') }}" class="nav__logo">
+                    <a href="{{ url('/') }}" class="nav__logo  mx-4">
                         Logo
                     </a>
                 </div>
@@ -200,30 +205,19 @@
                     @if (Route::has('login'))
                         @auth
                             <!-- Usuario Autenticado: Dropdown del Usuario -->
-                            <div class="nav__link dropdown__button">
-                                {{ Auth::user()->name }} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-
-                                <div class="dropdown__container">
-                                    <div class="dropdown__content">
-                                        <div class="dropdown__group">
-                                            <ul class="dropdown__list">
-                                                <li><a href="{{ url('/home') }}" class="dropdown__link">Dashboard</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('logout') }}"
-                                                        onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();"
-                                                        class="dropdown__link">
-                                                        {{ __('Logout') }}
-                                                    </a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                        class="d-none">
-                                                        @csrf
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                            <div class="custom-dropdown">
+                                <button class="custom-dropdown-btn"
+                                    id="customDropdownBtn">{{ Auth::user()->first_name }}</button>
+                                <div class="custom-dropdown-content" id="customDropdownContent">
+                                    <a href="{{ url('/home') }}">Dashboard</a>
+                                    <a href="#"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
                             </div>
                         @else
@@ -242,13 +236,33 @@
                 </div>
             </nav>
         </header>
-        <main class="py-4">
+        <main class="m-extreme">
             @yield('content')
         </main>
     </div>
 
- 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownBtn = document.getElementById('customDropdownBtn');
+            var dropdownContent = document.getElementById('customDropdownContent');
+
+            dropdownBtn.onclick = function() {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            };
+
+            // Cerrar el dropdown si se hace clic fuera de él
+            window.onclick = function(event) {
+                if (!event.target.matches('.custom-dropdown-btn')) {
+                    if (dropdownContent.style.display === 'block') {
+                        dropdownContent.style.display = 'none';
+                    }
+                }
+            };
+        });
+    </script>
+
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

@@ -69,6 +69,20 @@
                         <input type="password" name="password_confirmation" placeholder="Confirme su contraseña" required>
                     </div>
 
+                    {{-- ... otros campos del formulario ... --}}
+
+                    <!-- Campo de Selección de Rol -->
+                    <div class="input">
+                        <i class="uil uil-users-alt"></i>
+                        <select name="role" required>
+                            <option value="user" selected>Usuario</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+
+                    {{-- ... resto del formulario ... --}}
+
+
                     <input class="btn" type="submit" value="Regístrate">
                 </form>
             </div>

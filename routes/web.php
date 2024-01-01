@@ -1,22 +1,38 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Here is where you can register web routes for your application.
 |
 */
 
+// Ruta de Bienvenida
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Rutas de Autenticación
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Ruta de Inicio
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Rutas para Administradores
+Route::middleware(['auth', 'checkrole:admin'])->group(function () {
+    // Aquí irían todas tus rutas accesibles solo para administradores
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
+
+// Rutas para Usuarios Regulares
+Route::middleware(['auth', 'checkrole:user'])->group(function () {
+    // Aquí irían todas tus rutas accesibles solo para usuarios regulares
+    Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile');
+});

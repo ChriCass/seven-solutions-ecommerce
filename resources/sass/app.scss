@@ -4,5 +4,17 @@
 // Variables
 @import 'variables';
 
+
+body{
+    background-color: #fff !important
+}
+
+a{
+    text-decoration: none !important
+}
+.margin-top-ex{
+    margin-top: 7rem;
+}
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
