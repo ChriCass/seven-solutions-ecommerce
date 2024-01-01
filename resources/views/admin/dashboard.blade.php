@@ -1,7 +1,6 @@
-@extends('layouts.app',  ['useViteAssets' => true] )
+@extends('admin.layouts.top',  ['useViteAssets' => true] )
 
 @section('content')
-<x-vite-assets />
 <div class="container margin-top-ex">
     <div class="row justify-content-center">
         <div class="col-md-8">
