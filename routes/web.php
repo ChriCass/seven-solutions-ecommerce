@@ -29,6 +29,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     // Aquí irían todas tus rutas accesibles solo para administradores
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::resource('admin/courses', AdminController::class);
+
 });
 
 // Rutas para Usuarios Regulares

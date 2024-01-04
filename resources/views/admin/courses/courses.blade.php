@@ -83,27 +83,62 @@
                     <thead>
                         <tr>
                             <th class="border-top-0">#</th>
-                            <th class="border-top-0">Title</th>
-                            <th class="border-top-0">Short Description</th>
+                            <th class="border-top-0">Name</th>
+                            <th class="border-top-0">Status</th>
+                            <th class="border-top-0">Date</th>
                             <th class="border-top-0">Price</th>
-                            <th class="border-top-0">Language</th>
-                            <th class="border-top-0">Level</th>
-                            <th class="border-top-0">Visibility</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($cursos as $course)
-                            <tr>
-                                <td>{{ $course->id }}</td>
-                                <td>{{ $course->title }}</td>
-                                <td>{{ $course->short_description }}</td>
-                                <td>${{ $course->price }}</td>
-                                <td>{{ $course->language }}</td>
-                                <td>{{ $course->level }}</td>
-                                <td>{{ $course->visibility ? 'Visible' : 'Hidden' }}</td>
- 
-                            </tr>
-                        @endforeach
+                        <tr>
+                            <td>1</td>
+                            <td class="txt-oflo">Elite admin</td>
+                            <td>SALE</td>
+                            <td class="txt-oflo">April 18, 2021</td>
+                            <td><span class="text-success">$24</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="txt-oflo">Real Homes WP Theme</td>
+                            <td>EXTENDED</td>
+                            <td class="txt-oflo">April 19, 2021</td>
+                            <td><span class="text-info">$1250</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="txt-oflo">Ample Admin</td>
+                            <td>EXTENDED</td>
+                            <td class="txt-oflo">April 19, 2021</td>
+                            <td><span class="text-info">$1250</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="txt-oflo">Medical Pro WP Theme</td>
+                            <td>TAX</td>
+                            <td class="txt-oflo">April 20, 2021</td>
+                            <td><span class="text-danger">-$24</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="txt-oflo">Hosting press html</td>
+                            <td>SALE</td>
+                            <td class="txt-oflo">April 21, 2021</td>
+                            <td><span class="text-success">$24</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="txt-oflo">Digital Agency PSD</td>
+                            <td>SALE</td>
+                            <td class="txt-oflo">April 23, 2021</td>
+                            <td><span class="text-danger">-$14</span></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="txt-oflo">Helping Hands WP Theme</td>
+                            <td>MEMBER</td>
+                            <td class="txt-oflo">April 22, 2021</td>
+                            <td><span class="text-success">$64</span></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

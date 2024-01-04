@@ -5,69 +5,29 @@
 <div class="row justify-content-center">
     <div class="col-lg-4 col-md-12">
         <div class="white-box analytics-info">
-            <h3 class="box-title">Total Visit</h3>
+            <h3 class="box-title">Create a New Course?</h3>
             <ul class="list-inline two-part d-flex align-items-center mb-0">
-                <li>
-                    <div id="sparklinedash"><canvas width="67" height="30"
-                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                    </div>
-                </li>
-                <li class="ms-auto"><span class="counter text-success">659</span></li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-        <div class="white-box analytics-info">
-            <h3 class="box-title">Total Page Views</h3>
-            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                <li>
-                    <div id="sparklinedash2"><canvas width="67" height="30"
-                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                    </div>
-                </li>
-                <li class="ms-auto"><span class="counter text-purple">869</span></li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-        <div class="white-box analytics-info">
-            <h3 class="box-title">Unique Visitor</h3>
-            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                <li>
-                    <div id="sparklinedash3"><canvas width="67" height="30"
-                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                    </div>
-                </li>
-                <li class="ms-auto"><span class="counter text-info">911</span>
+      
+                <li class="ms-auto"> <a
+                    name=""
+                    id=""
+                    class="btn btn-success"
+                    href="{{ url('/admin/courses/create') }}"
+                    role="button"
+                    >Create</a
+                >
                 </li>
             </ul>
         </div>
     </div>
+    
 </div>
-<div class="container ">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in! admin!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+ 
 <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12">
         <div class="white-box">
             <div class="d-md-flex mb-3">
-                <h3 class="box-title mb-0">Recent sales</h3>
+                <h3 class="box-title mb-0">Courses</h3>
                 <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                     <select class="form-select shadow-none row border-top">
                         <option>March 2021</option>
@@ -101,7 +61,22 @@
                                 <td>{{ $course->language }}</td>
                                 <td>{{ $course->level }}</td>
                                 <td>{{ $course->visibility ? 'Visible' : 'Hidden' }}</td>
- 
+                                <td>
+                                    <!-- Botón de editar -->
+                                    <a href="{{ url('/admin/courses/'.$course->id.'/edit') }}" class="btn btn-warning">
+                                        Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <!-- Botón de borrar -->
+                                    <form action="{{ url('/admin/courses/'.$course->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

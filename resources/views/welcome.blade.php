@@ -193,13 +193,18 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="nav__btns">
                     <!-- Botones de Iniciar Sesión/Registro o Home dependiendo del estado de autenticación -->
                     @if (Route::has('login'))
                         @auth
-                            <!-- Usuario Autenticado: Enlace a la página de inicio -->
-                            <a href="{{ url('/home') }}" class="nav__link">Home</a>
+                            <!-- Usuario Autenticado: Enlace a la página de inicio según el rol -->
+                            @if (Auth::user()->role === 'admin')
+                                <!-- Enlace al Dashboard del Administrador -->
+                                <a href="{{ url('/admin/dashboard') }}" class="nav__link">Admin Dashboard</a>
+                            @else
+                                <!-- Enlace al Dashboard del Usuario -->
+                                <a href="{{ url('/home') }}" class="nav__link">User Dashboard</a>
+                            @endif
                         @else
                             <!-- Usuario No Autenticado: Enlaces para iniciar sesión y registrarse -->
                             <a href="{{ route('login') }}" class="nav__link">Iniciar sesión</a>
@@ -209,6 +214,7 @@
                         @endauth
                     @endif
                 </div>
+                
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-line nav__toggle-menu"></i>
