@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
-
+use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
 use App\Models\Course; // Asegúrate de importar tu modelo Curso
-
+use App\Models\Category; 
 class AdminController extends Controller
 {
     // Método para mostrar el dashboard
@@ -23,18 +23,39 @@ class AdminController extends Controller
     // Método para mostrar el formulario de creación de cursos
     public function create()
     {    $cursos = Course::all();
-        return view('admin.courses.create', compact('cursos'));
+        $categories = Category::all();
+        return view('admin.courses.create', compact('cursos', 'categories'));
     }
 
     // Método para almacenar un nuevo curso
-    public function store(Request $request)
+    public function store(CourseRequest $request)
     {
-        $datosCurso = $request->validate([
-            // Valida los campos necesarios
-        ]);
+        $datosCurso = $request->validated();
+        
+        // Procesar el archivo thumbnail
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->file('thumbnail');
+            $thumbnailName = time() . '_thumbnail.' . $thumbnail->getClientOriginalExtension();
+            $thumbnailPath = $thumbnail->storeAs('public/thumbnails', $thumbnailName);
+            $datosCurso['thumbnail'] = $thumbnailPath;
+        }
+    
+        // Procesar el archivo video
+        if ($request->hasFile('video_url')) {
+            $video = $request->file('video_url');
+            $videoName = time() . '_video.' . $video->getClientOriginalExtension();
+            $videoPath = $video->storeAs('public/videos', $videoName);
+            $datosCurso['video_url'] = $videoPath;
+        }
+    
+        // Crear el curso con los datos validados y los archivos cargados
         Course::create($datosCurso);
-        return redirect()->route('admin.courses.index');
+    
+        // Redirigir a la página de índice de cursos del administrador
+        return redirect()->route('courses.index');
     }
+    
+    
 
     // Método para mostrar el formulario de edición de cursos
     public function edit(Course $curso)

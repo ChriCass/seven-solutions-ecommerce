@@ -7,6 +7,17 @@
                 <h3 class="box-title">New Course Details</h3>
                 <form action="{{ url('/admin/courses') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    <!-- Alerta de Errores de Validación -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="row">
                         <!-- Título, Precio, Idioma -->
                         <div class="col-md-4">
@@ -44,9 +55,14 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="category_id">Category</label>
-                                <input type="number" class="form-control" id="category_id" name="category_id"
-                                    placeholder="Category ID" required>
+                                <select class="form-select" id="category_id" name="category_id" required>
+                                    <option value="">Select a Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+
                         </div>
 
                         <div class="col-md-4">
