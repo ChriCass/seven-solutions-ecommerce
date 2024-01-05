@@ -31,7 +31,7 @@ class CourseRequest extends FormRequest
             'language' => 'required|string|max:255',
             'price' => 'required|numeric',
             'level' => 'required|string|max:50',
-            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'video_url' => 'file|mimes:mp4,avi,mov|max:102400', // 100 MB
             'visibility' => 'required|boolean',
             'category_id' => 'required|integer|exists:categories,id'
