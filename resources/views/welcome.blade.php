@@ -22,7 +22,7 @@
 
 <body class="antialiased">
     <div>
-  
+
         <header class="header" id="header">
             <nav class="nav pading">
                 <div class="nav__data">
@@ -36,7 +36,7 @@
                     <ul class="nav__list">
 
                         <!--=============== DROPDOWN 1 ===============-->
-                        <li class="dropdown__item">                      
+                        <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
                                 Contenidos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
@@ -45,9 +45,9 @@
                                 <div class="dropdown__content">
                                     <div class="dropdown__group">
 
-    
+
                                         <span class="dropdown__title">Cursos introductorios</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Bootcamp FullStack</a>
@@ -63,11 +63,11 @@
                                             </li>
                                         </ul>
                                     </div>
-    
+
                                     <div class="dropdown__group">
-    
+
                                         <span class="dropdown__title">Cursos bootcampes</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Desarrollador Flutter</a>
@@ -83,11 +83,11 @@
                                             </li>
                                         </ul>
                                     </div>
-    
+
                                     <div class="dropdown__group">
-    
+
                                         <span class="dropdown__title">Bootcamps</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Desarrollador FullStack</a>
@@ -104,10 +104,10 @@
                                         </ul>
                                     </div>
 
-    
+
                                     <div class="dropdown__group">
                                         <span class="dropdown__title">Certificaciones</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Certificaciones de cursos</a>
@@ -134,7 +134,7 @@
                                 <div class="dropdown__content">
                                     <div class="dropdown__group">
                                         <span class="dropdown__title">Plantillas Web</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Plantillas gratis</a>
@@ -144,10 +144,10 @@
                                             </li>
                                         </ul>
                                     </div>
-    
-                                    <div class="dropdown__group">  
+
+                                    <div class="dropdown__group">
                                         <span class="dropdown__title">Diseños</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Diseños webs</a>
@@ -160,10 +160,10 @@
                                             </li>
                                         </ul>
                                     </div>
-    
+
                                     <div class="dropdown__group">
                                         <span class="dropdown__title">Otros</span>
-    
+
                                         <ul class="dropdown__list">
                                             <li>
                                                 <a href="#" class="dropdown__link">Recent blogs</a>
@@ -214,7 +214,7 @@
                         @endauth
                     @endif
                 </div>
-                
+
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-line nav__toggle-menu"></i>
@@ -230,19 +230,19 @@
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
                         style="enable-background:new 0 0 500 500;" xml:space="preserve">
                         <g id="Floor">
-                            <ellipse id="Floor_10_" style="fill:#F5F5F5;" cx="249.86" cy="362.362" rx="224.226"
-                                ry="124.15" />
+                            <ellipse id="Floor_10_" style="fill:#F5F5F5;" cx="249.86" cy="362.362"
+                                rx="224.226" ry="124.15" />
                         </g>
                         <g id="Shadows_1_">
                             <path class="svg__blob" id="Shadow_10_" style="fill:#E6E6E6;" d="M451.688,343.148l-124.992,72.202c-0.927,0.535-2.431,0.535-3.358,0L143.117,311.3
                             c-0.927-0.535-0.927-1.404,0-1.939l124.992-72.202c0.927-0.536,2.431-0.536,3.358,0l180.22,104.05
                             C452.615,341.745,452.615,342.613,451.688,343.148z" />
-                            <ellipse id="Shadow_9_" style="fill:#E6E6E6;" cx="161.23" cy="412.394" rx="75.083"
-                                ry="43.349" />
-                            <ellipse id="Shadow_8_" style="fill:#E6E6E6;" cx="252.653" cy="362.135" rx="59.1"
-                                ry="34.121" />
-                            <ellipse id="Shadow_5_" style="fill:#E6E6E6;" cx="384.088" cy="407.865" rx="37.097"
-                                ry="21.418" />
+                            <ellipse id="Shadow_9_" style="fill:#E6E6E6;" cx="161.23" cy="412.394"
+                                rx="75.083" ry="43.349" />
+                            <ellipse id="Shadow_8_" style="fill:#E6E6E6;" cx="252.653" cy="362.135"
+                                rx="59.1" ry="34.121" />
+                            <ellipse id="Shadow_5_" style="fill:#E6E6E6;" cx="384.088" cy="407.865"
+                                rx="37.097" ry="21.418" />
                         </g>
                         <g id="Desk_1_">
                             <g id="Desk">
@@ -1985,99 +1985,35 @@
 
                     <div class="popular_container">
                         <div class="popular_cards_container">
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                            @foreach ($cursos as $curso)
+                                <article class="popular_card">
 
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                                    <img src="{{ asset(str_replace('public/', 'storage/', $curso->thumbnail)) }}"
+                                        alt="{{ $curso->title }}" class="popular_img">
 
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                                    <div class="popular_data">
+                                        <!-- Muestra el precio del curso -->
+                                        <h2 class="popular_price">
+                                            <span>S/</span>{{ $curso->price }}
+                                        </h2>
 
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                                        <!-- Corrige 'tittle' a 'title' -->
+                                        <h3 class="popular_title">
+                                            {{ $curso->title }}
+                                        </h3>
 
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
-
-                            <article class="popular_card">
-                                <img src="./assets/img/1.jpg" alt="" class="popular_img">
-                                <div class="popular_data">
-                                    <h2 class="popular_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="popular_title">
-                                        Introducción a HTML
-                                    </h3>
-                                    <p class="popular_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                                        <!-- Muestra la descripción corta del curso si está disponible -->
+                                        <p class="popular_description">
+                                            {{ $curso->short_description ?? 'No description available' }}
+                                        </p>
+                                    </div>
+                                </article>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </section>
+
 
             <!-- SECCION TESTIMONIOS -->
             <section class="container">

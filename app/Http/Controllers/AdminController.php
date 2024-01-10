@@ -2,15 +2,17 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
-use App\Models\Course; // Asegúrate de importar tu modelo Curso
+use App\Models\Course;
+ // Asegúrate de importar tu modelo Curso
+ use App\Models\User;
 use App\Models\Category; 
 class AdminController extends Controller
 {
     // Método para mostrar el dashboard
     public function dashboard()
-    {
+    {   $users = User::all();
         $cursos = Course::all();
-        return view('admin.dashboard', compact('cursos'));
+        return view('admin.dashboard', compact('cursos', 'users'));
     }
 
     // Método para mostrar la lista de cursos

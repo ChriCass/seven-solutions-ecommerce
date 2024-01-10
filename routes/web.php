@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Models\Course;
 use App\Http\Controllers\UserProfileController;
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\UserProfileController;
 
 // Ruta de Bienvenida
 Route::get('/', function () {
-    return view('welcome');
+    $cursos = Course::all(); // Obtener todos los cursos
+    return view('welcome', compact('cursos'));
 });
 
 // Rutas de Autenticación
