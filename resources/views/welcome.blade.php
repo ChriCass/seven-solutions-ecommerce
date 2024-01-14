@@ -16,8 +16,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
-
+ 
+    @vite(['resources/js/swipperConfig.js'])
 </head>
 
 <body class="antialiased">
@@ -1889,87 +1889,29 @@
             <section class="bootcamp section" id="bootcamp">
                 <div class="container">
                     <h2 class="section__title-center">Nuestros Bootcamps</h2>
-
+            
                     <div class="bootcamp_container swiper">
                         <div class="swiper-wrapper">
-                            <article class="bootcamp_card swiper-slide">
-                                <img src="./assets/img/1.jpg" alt="" class="bootcamp_img">
-                                <div class="bootcamp_data">
-                                    <h2 class="bootcamp_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="bootcamp_title">
-                                        Bootcamp FullStack
-                                    </h3>
-                                    <p class="bootcamp_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
-
-                            <article class="bootcamp_card swiper-slide">
-                                <img src="./assets/img/1.jpg" alt="" class="bootcamp_img">
-                                <div class="bootcamp_data">
-                                    <h2 class="bootcamp_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="bootcamp_title">
-                                        Bootcamp FullStack
-                                    </h3>
-                                    <p class="bootcamp_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
-
-                            <article class="bootcamp_card swiper-slide">
-                                <img src="./assets/img/1.jpg" alt="" class="bootcamp_img">
-                                <div class="bootcamp_data">
-                                    <h2 class="bootcamp_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="bootcamp_title">
-                                        Bootcamp FullStack
-                                    </h3>
-                                    <p class="bootcamp_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
-
-                            <article class="bootcamp_card swiper-slide">
-                                <img src="./assets/img/1.jpg" alt="" class="bootcamp_img">
-                                <div class="bootcamp_data">
-                                    <h2 class="bootcamp_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="bootcamp_title">
-                                        Bootcamp FullStack
-                                    </h3>
-                                    <p class="bootcamp_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
-
-                            <article class="bootcamp_card swiper-slide">
-                                <img src="./assets/img/1.jpg" alt="" class="bootcamp_img">
-                                <div class="bootcamp_data">
-                                    <h2 class="bootcamp_price">
-                                        <span>S/</span>1.500
-                                    </h2>
-                                    <h3 class="bootcamp_title">
-                                        Bootcamp FullStack
-                                    </h3>
-                                    <p class="bootcamp_description">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
-                                    </p>
-                                </div>
-                            </article>
+                            @for ($i = 0; $i < 5; $i++)
+                                <article class="bootcamp_card swiper-slide">
+                                    <img src="{{ asset('img/1.jpg') }}" alt="" class="bootcamp_img">
+            
+                                    <div class="bootcamp_data">
+                                        <h2 class="bootcamp_price">
+                                            <span>S/</span>1.500
+                                        </h2>
+                                        <h3 class="bootcamp_title">
+                                            Bootcamp FullStack
+                                        </h3>
+                                        <p class="bootcamp_description">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, eligendi?
+                                        </p>
+                                    </div>
+                                </article>
+                            @endfor
                         </div>
                         <div class="swiper-button-next">
                             <i class="ri-arrow-right-s-line"></i>
-
                         </div>
                         <div class="swiper-button-prev">
                             <i class="ri-arrow-left-s-line"></i>
@@ -1977,6 +1919,7 @@
                     </div>
                 </div>
             </section>
+            
 
             <!-- SECCION POPULARES -->
             <section class="popular section" id="populares">
@@ -2023,7 +1966,7 @@
                         <div class="swiper-wrapper">
                             <article class="testimonio__article swiper-slide">
                                 <div class="testimonio__image">
-                                    <img src="assets/img/test-1.png" alt="image" class="testimonio__img">
+                                    <img src="{{ asset('img/1.jpg') }}"  alt="image" class="testimonio__img">
                                     <div class="testimonio__shadow"></div>
                                 </div>
 
@@ -2758,11 +2701,7 @@
         <!-- FOOTER -->
         @extends('layouts.footer')
     </div>
-
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
-
-
+ 
 </body>
 
 </html>
