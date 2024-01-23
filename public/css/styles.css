@@ -466,10 +466,10 @@ img {
 
 /* SECCION CURSOS bootcampES */
 .container_card{
-  display: grid;
-  place-items: center;
-  margin-inline: 1.5rem;
-  padding-block: 2rem;
+  display: grid !important;
+  place-items: center !important;
+  margin-inline: 1.5rem !important;
+  padding-block: 2rem !important;
 }
 
 

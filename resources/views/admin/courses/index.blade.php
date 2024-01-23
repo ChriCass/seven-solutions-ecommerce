@@ -57,7 +57,7 @@
                                     <td>{{ $course->visibility ? 'Visible' : 'Hidden' }}</td>
                                     <td class="d-flex">
                                         <!-- Botón de editar -->
-                                        <a href="{{ url('/admin/courses/' . $course->id . '/edit') }}" class="btn btn-warning">
+                                        <a href="{{ url('/admin/courses/' . $course->id . '/edit') }}" class="btn btn-warning text-light">
                                             Edit
                                         </a>
                                         <!-- Botón de borrar -->

@@ -60,21 +60,36 @@ class AdminController extends Controller
     
 
     // Método para mostrar el formulario de edición de cursos
-    public function edit(Course $curso)
+    public function edit(Course $course) // Asegúrate de que el nombre del parámetro sea 'course'
     {
-        return view('admin.courses.edit', compact('curso'));
+        $categories = Category::all();
+        return view('admin.courses.edit', compact('course', 'categories'));
     }
-
+    
     // Método para actualizar un curso
-    public function update(Request $request, Course $curso)
+    public function update(CourseRequest $request, Course $course)
     {
-        $datosCurso = $request->validate([
-            // Valida los campos necesarios
-        ]);
-        $curso->update($datosCurso);
-        return redirect()->route('admin.courses.index');
+        // El CourseRequest ya maneja la validación, por lo que no es necesario
+        // llamar al método validate() nuevamente.
+    
+        // Obtener los datos validados.
+        $validatedData = $request->validated();
+    
+        // Asignar los nuevos valores al modelo.
+        $course->fill($validatedData);
+    
+        // Comprobar si hay cambios.
+        if ($course->isClean()) {
+            return redirect()->back()->with('warning', 'No se realizaron cambios.');
+        }
+    
+        // Guardar cambios
+        $course->save();
+    
+        // Redirigir con mensaje de éxito
+        return redirect()->route('courses.index')->with('success', 'Curso actualizado con éxito.');
     }
-
+    
     // Método para eliminar un curso
     public function destroy(Course $curso)
     {

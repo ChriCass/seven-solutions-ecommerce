@@ -32,7 +32,7 @@ class CourseRequest extends FormRequest
             'price' => 'required|numeric',
             'level' => 'required|string|max:50',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-            'video_url' => 'file|mimes:mp4,avi,mov|max:102400', // 100 MB
+            'video_url' => 'nullable|file|mimes:mp4,avi,mov|max:102400', // 100 MB
             'visibility' => 'required|boolean',
             'category_id' => 'required|integer|exists:categories,id'
         ];

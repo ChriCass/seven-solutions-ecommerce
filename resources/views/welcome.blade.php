@@ -1892,7 +1892,7 @@
             
                     <div class="bootcamp_container swiper">
                         <div class="swiper-wrapper">
-                            @for ($i = 0; $i < 5; $i++)
+                            @for ($i = 0; $i < 4; $i++)
                                 <article class="bootcamp_card swiper-slide">
                                     <img src="{{ asset('img/1.jpg') }}" alt="" class="bootcamp_img">
             
