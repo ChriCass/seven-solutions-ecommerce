@@ -1,6 +1,12 @@
 @extends('admin.layouts.top', ['useViteAssets' => true])
 
 @section('content')
+    {{-- Display success message --}}
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
@@ -78,4 +84,6 @@
             </div>
         </div>
     </div>
+
+    
 @endsection

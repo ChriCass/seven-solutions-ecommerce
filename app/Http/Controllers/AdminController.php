@@ -91,10 +91,15 @@ class AdminController extends Controller
     }
     
     // Método para eliminar un curso
-    public function destroy(Course $curso)
-    {
-        $curso->delete();
-        return redirect()->route('admin.courses.index');
-    }
+    public function destroy(Course $course)
+{
+    $course->delete();
+
+    // Add a flash message to the session
+    session()->flash('success', 'Course deleted successfully.');
+
+    return redirect()->route('courses.index');
+}
+
 }
 
