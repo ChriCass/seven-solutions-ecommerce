@@ -244,7 +244,9 @@ img {
 
 .search{
   position: relative;
-  width: 100%;
+  width: 90%; /* Ajusta el ancho inicial para dejar espacio a .nav__btns */
+  max-width: 600px; /* O el máximo que prefieras */
+  margin: 0 auto; /* Centrar el buscador si es necesario */
   height: 56px;
   background-color: #fff;
   box-shadow: 0 4px 24px hsla(222,68%,12%, .1);
@@ -257,18 +259,23 @@ img {
 .search_input{
   border: none;
   outline: none;
-  width: calc(100%-64px);
+  width: 100%; /* Haz que el input use todo el ancho de .search */
   height: 100%;
   border-radius: 4rem;
   padding-left: 14px;
-  font-family: 'Poppins',sans-serif;
+  padding-right: 50px; /* Asegura espacio para el botón de búsqueda */
+  font-family: 'Poppins', sans-serif;
   font-size: .800rem;
   font-weight: 500;
-  transition: opacity 1.5s;
+  transition: padding .5s ease; /* Suaviza la transición del padding */
 }
 
-.search_input :-webkit-autofill{
-  box-shadow: 0 0 0 100px #FFF inset;
+.search_input:focus {
+  padding-right: 14px; /* Reduce el padding para "expandir" el campo de texto */
+}
+
+.search_input:focus ~ .search_boton {
+  right: 14px; /* Mueve el botón hacia la derecha cuando el input está enfocado */
 }
 
 .search_boton{
@@ -277,20 +284,22 @@ img {
   background-color: #000;
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 10px; /* Ajusta para centrar verticalmente dentro de .search */
   right: 10px;
-  margin: auto;
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: right .5s ease; /* Suaviza el movimiento del botón de búsqueda */
 }
 
 .search_icon,
 .search_close{
   color: #fff;
   font-size: 1.3rem;
-  position: absolute;
+}
+
+.search_input :-webkit-autofill{
+  box-shadow: 0 0 0 100px #FFF inset;
 }
 
 

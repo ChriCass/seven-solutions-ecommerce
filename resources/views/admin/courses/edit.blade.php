@@ -5,7 +5,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="white-box">
                 <h3 class="box-title">New Course Details</h3>
-                <form action="{{ route('courses.update', $course->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.courses.update', $course->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <!-- Mensaje de Advertencia -->

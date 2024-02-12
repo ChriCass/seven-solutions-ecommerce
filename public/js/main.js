@@ -122,3 +122,16 @@ let swiperCards = new Swiper(".testimonio__content", {
       },
     },
   });
+
+
+  function adjustWidth(element) {
+    const minWidth = 200; // Establece el ancho mínimo en píxeles
+    const maxWidth = 400; // Establece el ancho máximo en píxeles
+    // Calcula el ancho basado en la longitud del texto ingresado
+    let calculatedWidth = (element.value.length + 1) * 8;
+
+    // Asegura que el ancho calculado no sea menor que el mínimo ni mayor que el máximo
+    calculatedWidth = Math.max(minWidth, Math.min(calculatedWidth, maxWidth));
+
+    element.style.width = calculatedWidth + 'px';
+}
